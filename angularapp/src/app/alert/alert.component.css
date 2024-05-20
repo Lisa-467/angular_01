@@ -1,0 +1,30 @@
+.col1 {
+  height: 200px;
+  width: 800px;
+  border: 2px solid red;
+  background-color: rgb(245, 204, 204);
+  margin: auto;
+  color: black;
+  text-align: center;
+  padding-top: 85px;
+}
+.col2 {
+  height: 200px;
+  width: 800px;
+  border: 2px solid green;
+  background-color: rgb(180, 231, 180);
+  margin: auto;
+  text-align: center;
+  color: black;
+  padding-top: 85px;
+}
+.col3 {
+  height: 200px;
+  width: 800px;
+  border: 2px solid orange;
+  background-color: rgb(232, 232, 147);
+  margin: auto;
+  text-align: center;
+  color: black;
+  padding-top: 85px;
+}
