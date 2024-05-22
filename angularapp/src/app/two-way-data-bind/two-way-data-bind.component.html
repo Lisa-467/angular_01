@@ -1,0 +1,15 @@
+<div class="mt-3 m-lg-3">
+  <p>
+    Type Your Department Name : <input type="text" [(ngModel)]="department" />
+  </p>
+
+  <p>{{ department }}</p>
+  <hr />
+  <p>
+    <input type="text" class="rounded-2" [(ngModel)]="val1" />
+  </p>
+  <p>{{ val1 }}</p>
+  <button [disabled]="!val1" (click)="ResetUsername()" class="btn btn-primary">
+    Reset
+  </button>
+</div>

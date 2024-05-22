@@ -9,10 +9,23 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { AlertComponent } from './alert/alert.component';
+import { DataBindComponent } from './data-bind/data-bind.component';
+import { TwoWayDataBindComponent } from './two-way-data-bind/two-way-data-bind.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, Demo, Demo2, HeaderComponent, BodyComponent, FooterComponent, AlertComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    Demo,
+    Demo2,
+    HeaderComponent,
+    BodyComponent,
+    FooterComponent,
+    AlertComponent,
+    DataBindComponent,
+    TwoWayDataBindComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

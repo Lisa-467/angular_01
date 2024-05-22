@@ -1,0 +1,35 @@
+<div class="mt-4 m-lg-4 border border-dark">
+  <h5>-----Template Data Binding------</h5>
+  <br />
+  <input type="text" [value]="inputVal" /> <br />
+  <br />
+  <h5>Q1] {{ inputVal }}</h5>
+</div>
+<div class="mt-4 m-lg-4 border border-dark">
+  <h5>------Event Binding------</h5>
+  <br />
+  <input type="text" [value]="val1" /> <br />
+  <br />
+  <button (click)="UpdateVal()">Upadate</button> <br />
+  <br />
+  <h5>Q2] {{ val1 }}</h5>
+</div>
+
+<!-- <input
+  type="text"
+  class="form-control mt-2"
+  (blur)="onInputChange($event)"
+  placeholder="enter the name"
+  style="width: 250px"
+/>-->
+
+<input
+  type="text"
+  class="form-control mt-2"
+  #val
+  (input)="onInputChange(val.value)"
+  placeholder="enter the name"
+  style="width: 250px"
+/>
+<h2>{{ name }}</h2>
+<app-two-way-data-bind></app-two-way-data-bind>

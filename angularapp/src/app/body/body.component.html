@@ -1,4 +1,12 @@
 <div class="container mt-5">
   <h1>Welcome to my Angular App</h1>
   <p>This is the body of the application</p>
+  <p>My first name is {{ firstName }}</p>
+
+  <p>The Current time is : {{ currentTime() }}</p>
+  <p>Hello, {{ user.name }} {{ user.lastName }}</p>
 </div>
+<img [src]="imageUrl" alt="" width="200" height="200" />
+<button [disabled]="isDisabled">Click me</button>
+<input type="text" [value]="inputValue" />
+<button class="btn btn-primary" (click)="buttonClicked()">Save</button>
