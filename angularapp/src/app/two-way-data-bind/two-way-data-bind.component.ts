@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class TwoWayDataBindComponent implements OnInit {
   department: string = 'IT';
   val1: string = '';
+  update: any;
+  UpdateVal(value: any) {
+    if (!value) {
+      this.update = true;
+    } else {
+      this.update = false;
+    }
+  }
   ResetUsername() {
     this.val1 = '';
   }
