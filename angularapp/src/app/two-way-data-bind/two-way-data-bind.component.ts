@@ -6,13 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./two-way-data-bind.component.css'],
 })
 export class TwoWayDataBindComponent implements OnInit {
-  department: string = 'IT';
+  department: string = '';
   val1: string = '';
-  update: any;
+  update: any = true;
   UpdateVal(value: any) {
-    if (!value) {
-      this.update = true;
-    } else {
+    if (value) {
       this.update = false;
     }
   }

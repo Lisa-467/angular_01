@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2>Your Cart</h2>
+  <div *ngIf="cart.length === 0">Your cart is empty.</div>
+  <div *ngFor="let product of cart" class="cart-item">
+    <h5>{{ product.title }}</h5>
+    <p>Price: ${{ product.price }}</p>
+    <button (click)="removeFromCart(product.id)" class="btn btn-danger">
+      Remove
+    </button>
+  </div>
+  <button
+    (click)="clearCart()"
+    class="btn btn-warning mt-3"
+    *ngIf="cart.length > 0"
+  >
+    Clear Cart
+  </button>
+</div>

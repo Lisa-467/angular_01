@@ -1,0 +1,10 @@
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.warning {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}

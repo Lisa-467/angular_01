@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Signika:wght@300..700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-items: wrap;
+  width: 375px;
+  height: 100%;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.rating {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}

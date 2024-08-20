@@ -1,0 +1,9 @@
+<div>
+  <label for="colorPicker">Pick a Color: </label>
+  <input
+    type="color"
+    id="colorPicker"
+    [(ngModel)]="selectedColor"
+    (change)="onColorSelected($event)"
+  />
+</div>

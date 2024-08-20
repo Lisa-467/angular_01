@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <input
+        class="form-control mt-5"
+        type="text"
+        placeholder="Search gifs"
+        [(ngModel)]="title"
+      />
+    </div>
+  </div>
+  <div class="gif-container mt-5">
+    <div class="gif" *ngFor="let gif of gifs | giphyy : title">
+      <img [src]="gif.images.fixed_height.url" [alt]="gif.title" />
+    </div>
+  </div>
+</div>

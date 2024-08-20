@@ -2,14 +2,22 @@
   <p>
     Type Your Department Name : <input type="text" [(ngModel)]="department" />
   </p>
-
   <p>{{ department }}</p>
   <hr />
   <p>
-    <input type="text" class="rounded-2" [(ngModel)]="val1" />
+    <input
+      type="text"
+      class="rounded-2"
+      #val2
+      (input)="UpdateVal(val2.value)"
+      [(ngModel)]="val1"
+    />
   </p>
   <p>{{ val1 }}</p>
-  <button [disabled]="!val1" (click)="ResetUsername()" class="btn btn-primary">
+  <!-- <button [disabled]="!username" (click)="resetUsername()">
+    Reset Username
+  </button> -->
+  <button [disabled]="update" (click)="ResetUsername()" class="btn btn-primary">
     Reset
   </button>
 </div>

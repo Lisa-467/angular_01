@@ -1,0 +1,16 @@
+// Set of the names that are not allowed 
+
+const nameNotAllowed = new Set(['test', 'demo']);
+
+// getting the value of the formcontrol 
+const firstName = control.value as string;
+
+// Check if the value is in the set of not allowed names
+
+if (nameNotAllowed.has(firstName)) {
+  
+  return {'firstNameNotAllowed': true}
+}
+
+// If the value is allowed return null
+return null;

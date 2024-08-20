@@ -1,0 +1,27 @@
+<div>
+  <div class="ms-4 mt-2">
+    <h4>Country and State</h4>
+    <label class="mt-3" for="countryDropdown"><strong>Country: </strong></label>
+    <select
+      class="rounded-2 m-lg-2 bg-warning"
+      id="countryDropdown"
+      [(ngModel)]="selectedCountry"
+      (change)="onCountryChange()"
+    >
+      <option value="">Select Country</option>
+      <option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </option>
+    </select>
+
+    <br />
+
+    <label class="mt-3" for="stateDropdown"><strong>State: </strong></label>
+    <select id="stateDropdown" class="rounded-2 m-lg-2 bg-info">
+      <option value="">Select State</option>
+      <option *ngFor="let state of availableStates" [value]="state">
+        {{ state }}
+      </option>
+    </select>
+  </div>
+</div>

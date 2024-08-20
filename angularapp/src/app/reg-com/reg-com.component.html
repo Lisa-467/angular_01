@@ -1,0 +1,109 @@
+<mat-card class="registration-page">
+  <mat-card-title>Registration (Template Driven)</mat-card-title>
+  <mat-card-content>
+    <form
+      class="registration-form"
+      #registrationForm="ngForm"
+      (ngSubmit)="onSubmit(registrationForm)"
+    >
+      <mat-form-field>
+        <input
+          type="email"
+          matInput
+          ngModel
+          name="email"
+          placeholder="Email"
+          [required]="true"
+          email
+          [required]="true"
+          [minlength]="3"
+          [maxlength]="20"
+          #email="ngModel"
+        />
+        <mat-error *ngIf="email.errors?.['required']"
+          >The email is mandatory</mat-error
+        >
+        <mat-error *ngIf="email.errors?.['minlength']"
+          >Your email must have a minimum of
+          {{email.errors?.['minlength']?.requiredLength}} chars, but it only has
+          {{email.errors?.['minlength']?.actualLength}}</mat-error
+        >
+        <mat-error *ngIf="email.errors?.['email']"
+          >This is not valid email
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          type="password"
+          matInput
+          ngModel
+          name="password"
+          placeholder="Password"
+          [required]="true"
+          [minlength]="3"
+          [maxlength]="20"
+          #password="ngModel"
+        />
+        <mat-error *ngIf="password.errors?.['required']"
+          >The password is mandatory</mat-error
+        >
+        <mat-error *ngIf="password.errors?.['minlength']"
+          >Your password must have a minimum of
+          {{password.errors?.['minlength']?.requiredLength}} chars, but it only
+          has {{password.errors?.['minlength']?.actualLength}}</mat-error
+        >
+        <mat-error *ngIf="password.errors?.['password']"
+          >enter valid password
+        </mat-error>
+      </mat-form-field>
+      <!-- dropdown -->
+      <div ngModelGroup="address">
+        <mat-form-field>
+          <mat-label> Select County</mat-label>
+          <mat-select
+            name="country"
+            id="country"
+            [(ngModel)]="selectedCountryId"
+            (selectionChange)="onCountryChange()"
+          >
+            <mat-option
+              *ngFor="let country of countries"
+              [value]="country.countryId"
+            >
+              {{ country.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Select Sate</mat-label>
+          <mat-select name="state" id="state" ngModel>
+            <mat-option *ngFor="let state of filteredStates" [value]="state.id">
+              {{ state.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-radio-group aria-label="Select an option" class="mb-2">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female" class="m-lg-2"
+          >Female</mat-radio-button
+        >
+      </mat-radio-group>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!registrationForm.valid"
+      >
+        Submit
+      </button>
+      <div class="row mt-2">
+        <div class="com-md-6">
+          <button type="submit" class="mt-2 btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

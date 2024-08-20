@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 1718891778727,
+      "title": "js revision",
+      "status": true
+    },
+    {
+      "id": 1718891801869,
+      "title": "interview prep",
+      "status": true
+    },
+    {
+      "id": 1719236691661,
+      "title": "js program",
+      "status": true
+    },
+    {
+      "id": 1719236705004,
+      "title": "angular revision",
+      "status": true
+    }
+  ]
+}

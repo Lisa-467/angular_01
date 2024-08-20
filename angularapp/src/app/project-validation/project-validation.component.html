@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left rounded py-5">
+      <form [formGroup]="myProject">
+        <div class="row mt-2">
+          <div class="col">
+            <label>Project Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="projectName"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                myProject.get('projectName')?.touched &&
+                myProject.get('projectName')?.invalid
+              "
+            >
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('projectName')?.errors?.['required']"
+              >
+                Project name is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('projectName')?.errors?.['minlength']"
+              >
+                This field must have at least 2 characters
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('projectName')?.errors?.['maxlength']"
+              >
+                This field must have at most 50 characters
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  myProject.get('projectName')?.errors?.['firstNameNotAllowed']
+                "
+              >
+                Try another name for your project
+              </span>
+            </small>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col">
+            <label>Email</label>
+            <input
+              type="email"
+              class="form-control"
+              email
+              formControlName="email"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                myProject.get('email')?.touched &&
+                myProject.get('email')?.invalid
+              "
+            >
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('email')?.errors?.['required']"
+              >
+                Email is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('email')?.errors?.['email']"
+              >
+                This field must be a valid email
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('email')?.errors?.['minlength']"
+              >
+                This field must have at least 2 characters
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="myProject.get('email')?.errors?.['maxlength']"
+              >
+                This field must have at most 50 characters
+              </span>
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group mt-2">
+          <label>Select Project Status</label>
+          <select class="form-control" formControlName="status">
+            <option value="critical">Critical</option>
+            <option value="stable">Stable</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <button type="submit" class="mt-2 btn btn-primary" (click)="OnSubmit()">
+          Submit
+        </button>
+        <button
+          class="btn btn-warning ms-2 mt-2"
+          type="button"
+          (click)="resetForm()"
+        >
+          Reset Form
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

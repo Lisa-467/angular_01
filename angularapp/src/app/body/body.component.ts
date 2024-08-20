@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
   firstName: string = 'Jack';
-
+  isDestroy: Boolean = false;
   user = {
     name: 'Rocky',
     lastName: 'Bhai',
   };
+  parentData = 'Initial Data';
+  externalContent = 'This is some external projectted content !!';
+
   currentTime() {
     return new Date().toLocaleTimeString();
   }
@@ -26,4 +29,10 @@ export class BodyComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  sendData(value: any) {
+    this.parentData = value.target.value;
+  }
+  OnDestroy() {
+    this.isDestroy = true;
+  }
 }

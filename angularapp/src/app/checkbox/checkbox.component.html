@@ -1,0 +1,35 @@
+<div>
+  <div class="m-lg-5 mt-5 bg-info-subtle">
+    Select<input
+      type="checkbox"
+      class="m-lg-2 mt"
+      [(ngModel)]="isChecked"
+      id="abc"
+    />
+    <h4 *ngIf="isChecked">hello {{ var1 }}</h4>
+  </div>
+  <table class="table m-lg-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ele of course">
+        <td>{{ ele.name }}</td>
+        <td>{{ ele.duration }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <b>
+    <div [ngSwitch]="s1" class="m-lg-3 mt-2">
+      <p *ngSwitchCase="'winter'">this is winter season</p>
+      <p *ngSwitchCase="'spring'">this is spring season</p>
+      <p *ngSwitchCase="'summer'">This is summer season</p>
+      <p *ngSwitchCase="'monsoon'">this is monsoon season</p>
+      <p *ngSwitchCase="'autumn'">this is autumn season</p>
+      <p *ngSwitchDefault="">this is winter season</p>
+    </div></b
+  >
+</div>

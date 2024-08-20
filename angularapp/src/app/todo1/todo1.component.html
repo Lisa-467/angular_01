@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="col-md-8">
+    <input
+      type="text"
+      class="form-control form-inline"
+      placeholder="Add Todo title"
+      #todoTitle
+    />
+
+    <button (click)="createTodo(todoTitle.value)" class="btn btn-primary mt-2">
+      Create ToDO
+    </button>
+  </div>
+
+  <div class="col-md-8 mt-2">
+    <label for="serach">Search by title</label>
+
+    <input
+      type="text"
+      class="form-control"
+      id="search"
+      placeholder="Enter Title"
+      [(ngModel)]="title"
+    />
+  </div>
+
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todoList | filter : title">
+        <td>
+          <a [routerLink]="['/todoview', todo.id]">{{ todo.id }}</a>
+        </td>
+        <td>{{ todo.title }}</td>
+        <td *ngIf="todo.status">Completed</td>
+        <td *ngIf="!todo.status">Not Completed</td>
+        <td>
+          <button type="button" class="btn btn-link" (click)="editTodo(todo)">
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
